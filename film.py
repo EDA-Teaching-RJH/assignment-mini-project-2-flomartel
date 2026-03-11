@@ -2,7 +2,9 @@
 
 
 class Film: #creates a new class that films added in main project file go into here
-    def __init__(self, Title):#, Year, Genre):
+    def __init__(self, Title, Year, Genre):
         self.Title = Title
-        #self.Year = Year
-        #self.Genre = Genre
+        self.Year = Year
+        self.Genre = Genre
+        self.watched = False
+        self.rating = None

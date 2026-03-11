@@ -16,14 +16,19 @@ while True:
 
     user_choice = input("Please choose an option: ") #user selects an option
 
-    if user_choice == "2":
+    if user_choice == "2": #if user chooses option 2
+        
         Title = input("Please enter film title: ")
-        film = Film(Title)
-        watchlist.add_film(film)
+        Year = input("Please enter film year: ")
+        Genre = input("Please enter film genre: ")
+
+        film = Film(Title, Year, Genre)
+        watchlist.add_film(film) # adds film to watchlist list
+
         print("Film added to list")
 
         
         
 
-    elif user_choice == "5":
-        break
+    elif user_choice == "5": #if user chooses 5
+        break #stop the code, exit
