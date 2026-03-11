@@ -2,6 +2,7 @@
 
 from film import Film #import Film class from film.py file
 from watchlist import Watchlist #import Watchlist class from watchlist.py file
+import re #import REGEX for validating the year and the rating
 
 watchlist = Watchlist()
 
@@ -16,18 +17,21 @@ while True:
 
     user_choice = input("Please choose an option: ") #user selects an option
 
+
+
+
     if user_choice == "2": #if user chooses option 2
-        
+
         Title = input("Please enter film title: ")
         Year = input("Please enter film year: ")
-        Genre = input("Please enter film genre: ")
+        Genre = input("Please enter film genre: ") #asks user for the film title, year, and genre
 
         film = Film(Title, Year, Genre)
         watchlist.add_film(film) # adds film to watchlist list
 
         print("Film added to list")
 
-        
+        ######working here - use regex to validate the film year
         
 
     elif user_choice == "5": #if user chooses 5
