@@ -17,6 +17,9 @@ while True:
 
     user_choice = input("Please choose an option: ") #user selects an option
 
+    if user_choice == "1":
+        watchlist.list_films()
+
 
 
 
