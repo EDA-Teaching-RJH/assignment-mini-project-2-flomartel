@@ -9,3 +9,5 @@ how i will be implementing each requirement (planning):
 -OOP = multiple classes. one for films one for watchlist? films = mark as watched, add rating. watchlist = add film to list, show watchlist
 
 could add favourite films section or search by genre for "above and beyond"
+
+Regular Expressions:
