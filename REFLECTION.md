@@ -11,3 +11,4 @@ how i will be implementing each requirement (planning):
 could add favourite films section or search by genre for "above and beyond"
 
 Regular Expressions:
+-REGEX covered in workshop 7

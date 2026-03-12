@@ -17,24 +17,24 @@ while True:
 
     user_choice = input("Please choose an option: ") #user selects an option
 
-    if user_choice == "1":
+    if user_choice == "1": #if user inputs option 1
         watchlist.list_films()
 
-
-
-
-    if user_choice == "2": #if user chooses option 2
+    if user_choice == "2": #if user inputs option 2
 
         Title = input("Please enter film title: ") #asks user for film title input
         Year = input("Please enter film year: ") #asks user for film year input
 
         while True:
-            if re.match(r"^(19|20)\d{2}$", Year): #uses regex to make sure that the year starts with 19 or 20 and is 4 digits
+            if re.match(r"^(19|20)\d{2}$", Year): #uses regex here to validate the year
+            #(19|20) meaning that the first two digits are one of these, and \d{2} meaning its followed by two decimal digits
                 break #if correct then goes onto the next input, asking for genre
             else:
                 Year = input("Please enter a valid year: ") #if year is invalid, asks user for input again
 
         Genre = input("Please enter film genre: ") #asks user for the genre input
+
+
 
         film = Film(Title, Year, Genre)
         watchlist.add_film(film) # adds film to watchlist list
