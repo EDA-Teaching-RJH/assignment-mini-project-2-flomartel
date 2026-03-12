@@ -7,8 +7,11 @@ import re #import REGEX for validating the year and the rating
 watchlist = Watchlist()
 
 while True:
-
-    print("Welcome to your film organisation system!")
+    
+    print()
+    print("---Welcome to your film organisation system!---")
+    print()
+    print("--Menu Options--")
     print("1. List Films")
     print("2. Add Film")
     print("3. Mark As Watched")
