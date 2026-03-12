@@ -24,6 +24,14 @@ while True:
 
         Title = input("Please enter film title: ")
         Year = input("Please enter film year: ")
+
+        while True:
+            if re.search(r"^\d{4}$", Year): #uses regex to make sure that the year starts with 19 or 20 and is 4 digits
+                break #if correct then goes onto the next input, asking for genre
+            else:
+                valid_year = input("Please enter a valid year: ") #if year is invalid, asks user for input again
+            #if new year is valid it goes onto genre
+
         Genre = input("Please enter film genre: ") #asks user for the film title, year, and genre
 
         film = Film(Title, Year, Genre)
@@ -31,7 +39,6 @@ while True:
 
         print("Film added to list")
 
-        ######working here - use regex to validate the film year
         
 
     elif user_choice == "5": #if user chooses 5
