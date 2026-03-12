@@ -22,22 +22,21 @@ while True:
 
     if user_choice == "2": #if user chooses option 2
 
-        Title = input("Please enter film title: ")
-        Year = input("Please enter film year: ")
+        Title = input("Please enter film title: ") #asks user for film title input
+        Year = input("Please enter film year: ") #asks user for film year input
 
         while True:
-            if re.search(r"^\d{4}$", Year): #uses regex to make sure that the year starts with 19 or 20 and is 4 digits
+            if re.match(r"^(19|20)\d{2}$", Year): #uses regex to make sure that the year starts with 19 or 20 and is 4 digits
                 break #if correct then goes onto the next input, asking for genre
             else:
-                valid_year = input("Please enter a valid year: ") #if year is invalid, asks user for input again
-            #if new year is valid it goes onto genre
+                Year = input("Please enter a valid year: ") #if year is invalid, asks user for input again
 
-        Genre = input("Please enter film genre: ") #asks user for the film title, year, and genre
+        Genre = input("Please enter film genre: ") #asks user for the genre input
 
         film = Film(Title, Year, Genre)
         watchlist.add_film(film) # adds film to watchlist list
 
-        print("Film added to list")
+        print("Film added to list!")
 
         
 
