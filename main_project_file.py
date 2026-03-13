@@ -16,7 +16,8 @@ while True:
     print("2. Add Film")
     print("3. Mark As Watched")
     print("4. Rate Film")
-    print("5. Exit") #all options for the user to select from
+    print("5. Recommend me a film")
+    print("6. Exit") #all options for the user to select from
 
     user_choice = input("Please choose an option: ") #user selects an option
 
@@ -48,5 +49,5 @@ while True:
 
         
 
-    elif user_choice == "5": #if user chooses 5
+    elif user_choice == "6": #if user chooses 6
         break #stop the code, exit
