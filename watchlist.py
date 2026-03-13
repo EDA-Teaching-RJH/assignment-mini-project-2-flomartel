@@ -1,18 +1,27 @@
 
 #watchlist class of films added, stored and managed here
 
-class Watchlist:
+class Watchlist: #creates a new watchlist class, for managing the film objects
     def __init__(self):
-        self.films = []
+        self.films = [] #the list is made initially empty before films are added
 
     def add_film(self, film):
         self.films.append(film) #.append adds an item to the end of a list
 
 
     def list_films(self):
+
         if len(self.films) == 0: #checks to see if the list is equal to 0, if it is it prints below
             print("There are no entries in your watchlist!") #if there are 0 entries in the list it prints this
         else:
             for film in self.films: #if self.films =/= 0 it goes back to the empty list i made at the top and prints the entries
-                print(f"{film.Title} | {film.Genre} | {film.Year}") #prints the added film from option 2 in a nice table layout, with title, genre, and year
+                print(f"| {film.Title} | {film.Genre} | {film.Year} |") #prints the added film from option 2 in a nice table layout, with title, genre, and year
 
+    def mark_as_watched(self, film_watched):
+        for film in self.films:
+            if film.Title.lower() == film_watched.lower():
+                film.watched = True
+                print(f"Great choice! {film.Title} has been added to watched films!")
+                return
+        else:
+                print(f"Sorry, {film_watched} is not in your list. Try adding it in option 2.")

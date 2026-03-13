@@ -23,7 +23,7 @@ while True:
     if user_choice == "1": #if user inputs option 1
         watchlist.list_films()
 
-    if user_choice == "2": #if user inputs option 2
+    elif user_choice == "2": #if user inputs option 2
 
         Title = input("Please enter film title: ") #asks user for film title input
         Year = input("Please enter film year: ") #asks user for film year input
@@ -37,12 +37,14 @@ while True:
 
         Genre = input("Please enter film genre: ") #asks user for the genre input
 
-
-
         film = Film(Title, Year, Genre)
         watchlist.add_film(film) # adds film to watchlist list
 
         print("Film added to list!")
+
+    elif user_choice == "3":
+        watched_title = input("Please enter a film title to mark as watched: ")
+        watchlist.mark_as_watched(watched_title)
 
         
 
