@@ -6,5 +6,5 @@ class Film: #creates a new class that films added in main project file go into h
         self.Title = Title
         self.Year = Year
         self.Genre = Genre
-        self.watched = False
-        self.rating = None
+        self.watched = False #film is added as unwatched
+        self.rating = None #film is added as unrated

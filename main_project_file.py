@@ -43,8 +43,8 @@ while True:
         print("Film added to list!")
 
     elif user_choice == "3":
-        watched_title = input("Please enter a film title to mark as watched: ")
-        watchlist.mark_as_watched(watched_title)
+        watched_title = input("Please enter a previous film title to mark as watched: ") #promts user for film input
+        watchlist.mark_as_watched(watched_title) #searches for film and if found sets film as watched = true
 
         
 
