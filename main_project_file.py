@@ -13,12 +13,12 @@ while True: #sets up while loop
     print("---Welcome to your film organisation system!---")
     print()
     print("--Menu Options--")
-    print("1. List Films In Watchlist")
-    print("2. List Watched Films")
+    print("1. List Films In Watchlist") #will show all films added through option 3
+    print("2. List Watched Films") #will show all films added through option 4
     print("3. Add Film To Watchlist")
     print("4. Mark Film As Watched")
     print("5. Rate Film")
-    print("6. Recommend Me Some Films")
+    print("6. Recommend Me Some Films") #reads films from recommendations.csv
     print("7. Exit Application") #all options for the user to select from
 
     user_choice = input("Please choose an option: ") #user selects an option
