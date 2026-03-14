@@ -18,6 +18,20 @@ class Watchlist: #creates a new watchlist class, for managing the film objects
             for film in self.films: #if self.films =/= 0 it goes back to the empty list i made at the top and prints the entries
                 if not film.watched: #now displays either watched or unwatched next to movie in list
                     print(f"| {film.Title} | {film.Genre} | {film.Year} |") #prints the added film from option 2 in a nice table layout, with title,genre,year,watched/unwatched
+                    
+#lists watched films
+    def list_of_watched_films(self):
+        watched_found = False
+        for film in self.films:
+            if film.watched:
+                print(f"| {film.Title} | {film.Genre} | {film.Year} |")
+                watched_found = True
+
+        if not watched_found:
+            print("You haven't watched any films yet. Try adding one")
+
+
+
 
 #for option 3 mark as watched
     def mark_as_watched(self, film_watched):
