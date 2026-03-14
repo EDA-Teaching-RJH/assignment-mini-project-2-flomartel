@@ -5,19 +5,21 @@ class Watchlist: #creates a new watchlist class, for managing the film objects
     def __init__(self):
         self.films = [] #the list is made initially empty before films are added
 
+#for option 2 adding film
     def add_film(self, film): #defines add film function
         self.films.append(film) #.append adds an item to the end of a list
 
-
+#for option 1 listing watchlist
     def list_films(self): #defines list films function
 
         if len(self.films) == 0: #checks to see if the list is equal to 0, if it is it prints below
             print("There are no entries in your watchlist!") #if there are 0 entries in the list it prints this
         else:
             for film in self.films: #if self.films =/= 0 it goes back to the empty list i made at the top and prints the entries
-                film_status = "Watched" if film.watched else "Unwatched" #now displays either watched or unwatched next to movie in list
-                print(f"| {film.Title} | {film.Genre} | {film.Year} | {film_status} |") #prints the added film from option 2 in a nice table layout, with title,genre,year,watched/unwatched
+                if not film.watched: #now displays either watched or unwatched next to movie in list
+                    print(f"| {film.Title} | {film.Genre} | {film.Year} |") #prints the added film from option 2 in a nice table layout, with title,genre,year,watched/unwatched
 
+#for option 3 mark as watched
     def mark_as_watched(self, film_watched):
         for film in self.films:
             if film.Title.lower() == film_watched.lower(): #if film title entered is in film list(also lets film be added in lowercase)
