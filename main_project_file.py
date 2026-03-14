@@ -3,6 +3,7 @@
 from film import Film #import Film class from film.py file
 from watchlist import Watchlist #import Watchlist class from watchlist.py file
 import re #import REGEX for validating the year and the rating
+import csv #imports my recommendations csv file
 
 watchlist = Watchlist()
 
@@ -47,7 +48,11 @@ while True:
         watched_title = input("Please enter a previous film title to mark as watched: ") #promts user for film input
         watchlist.mark_as_watched(watched_title) #searches for film and if found sets film as watched = true
 
-        
+    elif user_choice == "5":
+        genre_choice = input("Please choose a genre for a recommendation: ")
+        with open("recommendations.csv") as file:
+            reader = csv.DictReader(file)
+            
 
     elif user_choice == "6": #if user chooses 6
         break #stop the code, exit
