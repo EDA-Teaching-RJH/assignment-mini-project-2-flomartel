@@ -7,18 +7,18 @@ import csv #imports my recommendations csv file
 
 watchlist = Watchlist()
 
-while True:
+while True: #sets up while loop
     
     print()
     print("---Welcome to your film organisation system!---")
     print()
     print("--Menu Options--")
-    print("1. List Films")
-    print("2. Add Film")
-    print("3. Mark As Watched")
+    print("1. List Films In Watchlist")
+    print("2. Add Film To Watchlist")
+    print("3. Mark Film As Watched")
     print("4. Rate Film")
-    print("5. Recommend me a film")
-    print("6. Exit") #all options for the user to select from
+    print("5. Recommend Me Some Films")
+    print("6. Exit Application") #all options for the user to select from
 
     user_choice = input("Please choose an option: ") #user selects an option
 
@@ -48,11 +48,27 @@ while True:
         watched_title = input("Please enter a previous film title to mark as watched: ") #promts user for film input
         watchlist.mark_as_watched(watched_title) #searches for film and if found sets film as watched = true
 
+
+
     elif user_choice == "5":
-        genre_choice = input("Please choose a genre for a recommendation: ")
-        with open("recommendations.csv") as file:
-            reader = csv.DictReader(file)
-            
+        genre_choice = input("Please choose a genre for some recommendations: ") #asks user for input
+        with open("recommendations.csv", "r") as file: #"r" means reading data from the recommendations.csv file
+            reader = csv.DictReader(file) #converts a csv file to a python dictionary
+            found = False
+
+            count = 0 #count starts at zero
+            print("Try these:")
+            for row in reader:
+                if row["Genre"].lower() == genre_choice.lower(): #using .lower() so it can be entered upper or lowercase
+                    print(f"{row['Title']} | {row['Year']}") #prints the Title row and the Year row from the csv file
+
+                    count += 1 #count up by 1
+                    if count == 3: #when count gets to 3 break. it will recommend only three films
+                        break
+            else: #if user enters a not found genre instead of breaking it will print this
+                    print("Sorry, no films found under that genre.")
+
+
 
     elif user_choice == "6": #if user chooses 6
         break #stop the code, exit
