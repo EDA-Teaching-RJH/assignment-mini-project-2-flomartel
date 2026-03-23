@@ -63,17 +63,14 @@ while True: #sets up while loop
         user_rating = input("Please enter rating for the film 0-5: ")
 
         while True:
-            if re.match(r"^(5|[0-5])$", user_rating):
+            if re.match(r"^0*([0-4](\.\d+)?|5)$", user_rating):
                 break
             else:
                 user_rating = input("Please enter a valid rating 0-5: ")
 
-        watchlist.rating_film(user_title, int(user_rating))
+        watchlist.rating_film(user_title, float(user_rating))
 
         
-
-
-
     elif user_choice == "6":
         genre_choice = input("Please choose a genre for some recommendations: ") #asks user for input
         with open("recommendations.csv", "r") as file: #"r" means reading data from the recommendations.csv file
