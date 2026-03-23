@@ -28,7 +28,7 @@ class Watchlist: #creates a new watchlist class, for managing the film objects
                 watched_found = True
 
         if not watched_found:
-            print("You haven't watched any films yet. Try adding one")
+            print("You haven't watched any films yet. Try adding one!")
 
 
 
@@ -44,3 +44,20 @@ class Watchlist: #creates a new watchlist class, for managing the film objects
                 print(f"Sorry, {film_watched} is not in your list. Try adding it in option 2.") #prompts user to add film to list if not already entered
 
     #should add something that takes you straight to option 2 if the film isnt already added in the list maybe
+
+
+
+    def rating_film(self,user_title,user_rating):
+        for film in self.films: #calls back up to watchlist made
+            if film.Title.lower() == user_title.lower(): #finds user input title from film list. can also be input in lowercase
+            
+                if not film.watched:
+                    print("Sorry, this film is not in your watched list. Please watch the film before rating it.")
+                    return #if film is in watchlist but not watched films, promt user to watch before rating
+            
+                film.rating = user_rating
+                print(f"Awesome! {film.Title} has been rated at {user_rating}!") #lets user know film has been rated
+                return
+        else:
+            print(f"Sorry, {user_title} is not in any list.")#if user input is not in any list it prints this
+

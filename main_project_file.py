@@ -58,6 +58,21 @@ while True: #sets up while loop
         watchlist.mark_as_watched(watched_title) #searches for film and if found sets film as watched = true
 
 
+    elif user_choice == "5":
+        user_title = input("Please enter watched film title to rate: ")
+        user_rating = input("Please enter rating for the film 0-5: ")
+
+        while True:
+            if re.match(r"^(5|[0-5])$", user_rating):
+                break
+            else:
+                user_rating = input("Please enter a valid rating 0-5: ")
+
+        watchlist.rating_film(user_title, int(user_rating))
+
+        
+
+
 
     elif user_choice == "6":
         genre_choice = input("Please choose a genre for some recommendations: ") #asks user for input
