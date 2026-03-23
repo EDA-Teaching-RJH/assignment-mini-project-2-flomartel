@@ -63,12 +63,12 @@ while True: #sets up while loop
         user_rating = input("Please enter rating for the film 0-5: ")
 
         while True:
-            if re.match(r"^0*([0-4](\.\d+)?|5)$", user_rating):
+            if re.match(r"^0*([0-4](\.\d+)?|5)$", user_rating): #regex validates any decimal number between 0-5
                 break
             else:
-                user_rating = input("Please enter a valid rating 0-5: ")
+                user_rating = input("Please enter a valid rating 0-5: ") #asks user again for valid rating
 
-        watchlist.rating_film(user_title, float(user_rating))
+        watchlist.rating_film(user_title, float(user_rating)) #converts into floating point number (decimal)
 
         
     elif user_choice == "6":
