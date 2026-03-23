@@ -24,9 +24,13 @@ while True: #sets up while loop
     user_choice = input("Please choose an option: ") #user selects an option
 
     if user_choice == "1": #if user inputs option 1
+        print()
+        print("Here is your watchlist: ")
         watchlist.list_films() #runs this named function inside the watchlist file
 
     elif user_choice == "2":
+        print()
+        print("Here are your watched films: ")
         watchlist.list_of_watched_films() #runs this named function inside the watchlist file
 
 
@@ -65,7 +69,7 @@ while True: #sets up while loop
             print("Try these:")
             for row in reader:
                 if row["Genre"].lower() == genre_choice.lower(): #using .lower() so it can be entered upper or lowercase
-                    print(f"{row['Title']} | {row['Year']}") #prints the Title row and the Year row from the csv file
+                    print(f"{row['Title']} | {row['Year']} |") #prints the Title row and the Year row from the csv file
 
                     count += 1 #count up by 1
                     if count == 3: #when count gets to 3 break. it will recommend only three films
