@@ -24,7 +24,7 @@ class Watchlist: #creates a new watchlist class, for managing the film objects
         watched_found = False
         for film in self.films:
             if film.watched:
-                print(f"| {film.Title} | {film.Genre} | {film.Year} |")
+                print(f"| {film.Title} | {film.Genre} | {film.Year} | ☆ {film.rating}/5☆ |")
                 watched_found = True
 
         if not watched_found:
