@@ -1,13 +1,28 @@
 
 #watchlist class of films added, stored and managed here. then changed into just every option being controlled from here
+import csv
 
 class Watchlist: #creates a new watchlist class, for managing the film objects
     def __init__(self):
         self.films = [] #the list is made initially empty before films are added
 
+
 #for option 3 adding film to watchlist
     def add_film(self, film): #defines add film function
         self.films.append(film) #.append adds an item to the end of a list
+
+        with open("watchlist.csv", "a", newline="") as file:
+            writer = csv.writer(file)
+            writer.writerow([
+                film.Title,
+                film.Year,
+                film.Genre,
+                film.watched,
+                film.rating
+            ])
+
+
+
 
 #for option 1 listing watchlist
     def list_films(self): #defines list films function
