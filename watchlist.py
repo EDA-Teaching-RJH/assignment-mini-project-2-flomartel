@@ -11,8 +11,8 @@ class Watchlist: #creates a new watchlist class, for managing the film objects
     def add_film(self, film): #defines add film function
         self.films.append(film) #.append adds an item to the end of a list
 
-        with open("watchlist.csv", "a", newline="") as file:
-            writer = csv.writer(file)
+        with open("watchlist.csv", "a", newline="") as file: #appending new data on a new line using "a" and newline
+            writer = csv.writer(file) #writes data to the csv file watchlist.csv
             writer.writerow([
                 film.Title,
                 film.Year,
@@ -20,9 +20,6 @@ class Watchlist: #creates a new watchlist class, for managing the film objects
                 film.watched,
                 film.rating
             ])
-
-
-
 
 #for option 1 listing watchlist
     def list_films(self): #defines list films function
