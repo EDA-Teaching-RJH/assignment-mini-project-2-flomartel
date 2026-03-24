@@ -23,18 +23,18 @@ while True: #sets up while loop
 
     user_choice = input("Please choose an option: ") #user selects an option
 
-    if user_choice == "1": #if user inputs option 1
+    if user_choice == "1": #option 1 list films in watchlist
         print()
         print("Here is your watchlist: ")
         watchlist.list_films() #runs this named function inside the watchlist file
 
-    elif user_choice == "2":
+    elif user_choice == "2": #option 2 list watched films
         print()
         print("Here are your watched films: ")
         watchlist.list_of_watched_films() #runs this named function inside the watchlist file
 
 
-    elif user_choice == "3": #if user inputs option 2
+    elif user_choice == "3": #option 3 add film to watchlist
 
         Title = input("Please enter film title: ") #asks user for film title input
         Year = input("Please enter film year: ") #asks user for film year input
@@ -53,25 +53,25 @@ while True: #sets up while loop
 
         print("Film added to list!")
 
-    elif user_choice == "4":
+    elif user_choice == "4": #option 4 mark film as watched
         watched_title = input("Please enter a previous film title to mark as watched: ") #promts user for film input
         watchlist.mark_as_watched(watched_title) #searches for film and if found sets film as watched = true
 
 
-    elif user_choice == "5":
+    elif user_choice == "5": #option 5 rate film
         user_title = input("Please enter watched film title to rate: ")
-        user_rating = input("Please enter rating for the film 0-5: ")
+        user_rating = input("Please enter rating for the film 0-5: ") #two inputs for the user to answer
 
-        while True:
+        while True: #starts infinite while loop
             if re.match(r"^0*([0-4](\.\d+)?|5)$", user_rating): #regex validates any decimal number between 0-5
-                break
+                break #breaks while loop and continues if input is suitable
             else:
                 user_rating = input("Please enter a valid rating 0-5: ") #asks user again for valid rating
 
         watchlist.rating_film(user_title, float(user_rating)) #converts into floating point number (decimal)
 
         
-    elif user_choice == "6":
+    elif user_choice == "6": #option 6 reccommend me a film
         genre_choice = input("Please choose a genre for some recommendations: ") #asks user for input
         with open("recommendations.csv", "r") as file: #"r" means reading data from the recommendations.csv file
             reader = csv.DictReader(file) #converts a csv file to a python dictionary
@@ -91,5 +91,5 @@ while True: #sets up while loop
 
 
 
-    elif user_choice == "7": #if user chooses 6
+    elif user_choice == "7": #option 7 exit
         break #stop the code, exit

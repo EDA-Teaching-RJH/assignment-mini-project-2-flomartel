@@ -1,11 +1,11 @@
 
-#watchlist class of films added, stored and managed here
+#watchlist class of films added, stored and managed here. then changed into just every option being controlled from here
 
 class Watchlist: #creates a new watchlist class, for managing the film objects
     def __init__(self):
         self.films = [] #the list is made initially empty before films are added
 
-#for option 2 adding film
+#for option 3 adding film to watchlist
     def add_film(self, film): #defines add film function
         self.films.append(film) #.append adds an item to the end of a list
 
@@ -19,7 +19,7 @@ class Watchlist: #creates a new watchlist class, for managing the film objects
                 if not film.watched: #now displays either watched or unwatched next to movie in list
                     print(f"| {film.Title} | {film.Genre} | {film.Year} |") #prints the added film from option 2 in a nice table layout, with title,genre,year,watched/unwatched
                     
-#lists watched films
+#for option 2 lists watched films
     def list_of_watched_films(self):
         watched_found = False
         for film in self.films:
@@ -29,9 +29,6 @@ class Watchlist: #creates a new watchlist class, for managing the film objects
 
         if not watched_found:
             print("You haven't watched any films yet. Try adding one!")
-
-
-
 
 #for option 3 mark as watched
     def mark_as_watched(self, film_watched):
@@ -46,7 +43,7 @@ class Watchlist: #creates a new watchlist class, for managing the film objects
     #should add something that takes you straight to option 2 if the film isnt already added in the list maybe
 
 
-
+# for option 5 rate film
     def rating_film(self,user_title,user_rating):
         for film in self.films: #calls back up to watchlist made
             if film.Title.lower() == user_title.lower(): #finds user input title from film list. can also be input in lowercase
