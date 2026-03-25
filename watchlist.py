@@ -1,10 +1,25 @@
 
 #watchlist class of films added, stored and managed here. then changed into just every option being controlled from here
 import csv
+from film import Film
 
 class Watchlist: #creates a new watchlist class, for managing the film objects
     def __init__(self):
         self.films = [] #the list is made initially empty before films are added
+
+    def load_from_csv(self):
+        with open("watchlist.csv", "r", newline="") as file:
+            reader = csv.DictReader(file)
+            for row in reader:
+                watched = row["Watched"] == "True"
+                rating = float(row["Rating"]) if row["Rating"] not in ("", "None") else None
+
+                film = Film(
+                    row["Title"],row["Year"],row["Genre"]
+                )
+                film.watched = watched
+                film.rating = rating
+                self.films.append(film)
 
 
 #for option 3 adding film to watchlist
