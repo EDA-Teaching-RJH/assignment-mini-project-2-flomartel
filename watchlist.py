@@ -7,19 +7,19 @@ class Watchlist: #creates a new watchlist class, for managing the film objects
     def __init__(self):
         self.films = [] #the list is made initially empty before films are added
 
-    def load_from_csv(self):
-        with open("watchlist.csv", "r", newline="") as file:
-            reader = csv.DictReader(file)
+    def load_from_csv(self): 
+        with open("watchlist.csv", "r", newline="") as file: #open watchlist.csv as a read file, newline=starts new line
+            reader = csv.DictReader(file) #reads data from the csv file
             for row in reader:
                 watched = row["Watched"] == "True"
-                rating = float(row["Rating"]) if row["Rating"] not in ("", "None") else None
+                rating = float(row["Rating"]) if row["Rating"] not in ("", "None") else None #if number then convert to float(decimal) if no then set as None
 
                 film = Film(
-                    row["Title"],row["Year"],row["Genre"]
+                    row["Title"],row["Year"],row["Genre"] #creates new film object
                 )
                 film.watched = watched
                 film.rating = rating
-                self.films.append(film)
+                self.films.append(film) #append data
 
 
 #for option 3 adding film to watchlist
