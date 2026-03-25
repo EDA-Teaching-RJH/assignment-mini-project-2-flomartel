@@ -7,6 +7,22 @@ class Watchlist: #creates a new watchlist class, for managing the film objects
     def __init__(self):
         self.films = [] #the list is made initially empty before films are added
 
+    def save_to_csv(self):
+        with open ("watchlist.csv", "w", newline="") as file: #open watchlist.csv in write mode on newline
+            writer = csv.writer(file) #writes data to watchlist.csv
+            writer.writerow(["Title", "Year", "Genre", "Watched", "Rating"]) #write the header
+            #struggled here header kept getting deleted but fixed eventualy
+            for film in self.films:
+                writer.writerow([ #used to write the row of data into the csv file
+                    film.Title,
+                    film.Year,
+                    film.Genre,
+                    film.watched,
+                    film.rating
+
+
+            ])
+
     def load_from_csv(self): 
         with open("watchlist.csv", "r", newline="") as file: #open watchlist.csv as a read file, newline=starts new line
             reader = csv.DictReader(file) #reads data from the csv file
@@ -28,14 +44,14 @@ class Watchlist: #creates a new watchlist class, for managing the film objects
 
         with open("watchlist.csv", "a", newline="") as file: #appending new data on a new line using "a" and newline
             writer = csv.writer(file) #writes data to the csv file watchlist.csv
-            writer.writerow([
+            writer.writerow([ #used to write a row of data into these catagories in the csv file
                 film.Title,
                 film.Year,
                 film.Genre,
                 film.watched,
                 film.rating
             ])
-
+        self.save_to_csv() ####
 #for option 1 listing watchlist
     def list_films(self): #defines list films function
 
@@ -63,6 +79,7 @@ class Watchlist: #creates a new watchlist class, for managing the film objects
             if film.Title.lower() == film_watched.lower(): #if film title entered is in film list(also lets film be added in lowercase)
                 film.watched = True #then mark the film as watched = true
                 print(f"Great choice! {film.Title} has been added to watched films!") #confirms film has been watched to user
+                self.save_to_csv() #####
                 return #exits function and saves value if film is in watchlist
         else: #if film title is not in list
                 print(f"Sorry, {film_watched} is not in your list. Try adding it in option 2.") #prompts user to add film to list if not already entered
@@ -81,6 +98,7 @@ class Watchlist: #creates a new watchlist class, for managing the film objects
             
                 film.rating = user_rating
                 print(f"Awesome! {film.Title} has been rated at {user_rating}!") #lets user know film has been rated
+                self.save_to_csv()####
                 return
         else:
             print(f"Sorry, {user_title} is not in any list.")#if user input is not in any list it prints this

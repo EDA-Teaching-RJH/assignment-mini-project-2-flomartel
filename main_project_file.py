@@ -6,7 +6,7 @@ import re #import REGEX for validating the year and the rating
 import csv #imports my recommendations csv file
 
 watchlist = Watchlist()
-watchlist.load_from_csv()
+watchlist.load_from_csv() #loads all films from watchlist.csv to be used here
 
 while True: #sets up while loop
     
