@@ -94,3 +94,6 @@ while True: #sets up while loop
 
     elif user_choice == "7": #option 7 exit
         break #stop the code, exit
+
+    else:
+        print("Please enter a valid input.")
