@@ -1,4 +1,7 @@
 # Film rating, filtering, and watchlist system project main file
+#Please run the program through this file
+
+
 
 from film import Film #import Film class from film.py file
 from watchlist import Watchlist #import Watchlist class from watchlist.py file
