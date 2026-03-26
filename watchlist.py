@@ -1,6 +1,7 @@
 
 #watchlist class of films added, stored and managed here. then changed into just every option being controlled from here
 import csv
+import random #imports random external library
 from film import Film
 
 class Watchlist: #creates a new watchlist class, for managing the film objects
@@ -108,4 +109,15 @@ class Watchlist: #creates a new watchlist class, for managing the film objects
                 return
         else:
             print(f"Sorry, {user_title} is not in any list.")#if user input is not in any list it prints this
+
+
+#using the "random" external library to choose a random film from my watchlist
+    def random_film(self):
+        if len(self.films) == 0: #if no films in watchlist print no films
+            print("There are no films to choose from in your watchlist")
+            return #return data
+        
+        film = random.choice(self.films) #choose random film from film watchlist
+        print(f"Try watching: {film.Title} | {film.Year}") #print the film in this layout
+
 

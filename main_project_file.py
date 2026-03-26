@@ -2,8 +2,8 @@
 
 from film import Film #import Film class from film.py file
 from watchlist import Watchlist #import Watchlist class from watchlist.py file
-import re #import REGEX for validating the year and the rating
-import csv #imports my recommendations csv file
+import re #import REGEX library for validating the year and the rating
+import csv #imports csv library for my recommendations csv file
 
 watchlist = Watchlist()
 watchlist.load_from_csv() #loads all films from watchlist.csv to be used here
@@ -20,7 +20,8 @@ while True: #sets up while loop
     print("4. Mark Film As Watched")
     print("5. Rate Film")
     print("6. Recommend Me Some Films") #reads films from recommendations.csv
-    print("7. Exit Application") #all options for the user to select from
+    print("7. Suggest From Watchlist")
+    print("8. Exit Application") #all options for the user to select from
 
     user_choice = input("Please choose an option: ") #user selects an option
 
@@ -89,9 +90,10 @@ while True: #sets up while loop
             else: #if user enters a not found genre instead of breaking it will print this
                     print("Sorry, no films found under that genre.")
 
+    elif user_choice == "7":
+        watchlist.random_film() #calls to defined function random choice in watchlist.py
 
-
-    elif user_choice == "7": #option 7 exit
+    elif user_choice == "8": #option 7 exit
         break #stop the code, exit
 
 
