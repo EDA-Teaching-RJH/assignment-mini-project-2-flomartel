@@ -89,7 +89,7 @@ class Watchlist: #creates a new watchlist class, for managing the film objects
                 self.save_to_csv() #####
                 return #exits function and saves value if film is in watchlist
         else: #if film title is not in list
-                print(f"Sorry, {film_watched} is not in your list. Try adding it in option 2.") #prompts user to add film to list if not already entered
+                print(f"Sorry, {film_watched} is not in your list. Try adding it in option 3.") #prompts user to add film to list if not already entered
 
     #should add something that takes you straight to option 2 if the film isnt already added in the list maybe
 
