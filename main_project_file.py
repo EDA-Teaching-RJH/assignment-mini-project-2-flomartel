@@ -20,7 +20,7 @@ while True: #sets up while loop
     print("4. Mark Film As Watched")
     print("5. Rate Film")
     print("6. Recommend Me Some Films") #reads films from recommendations.csv
-    print("7. Suggest From Watchlist")
+    print("7. Suggest From Watchlist")#uses random external library to suggest random film from watchlist
     print("8. Exit Application") #all options for the user to select from
 
     user_choice = input("Please choose an option: ") #user selects an option

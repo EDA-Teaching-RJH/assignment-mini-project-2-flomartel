@@ -1,7 +1,7 @@
 
 #watchlist class of films added, stored and managed here. then changed into just every option being controlled from here
 import csv
-import random #imports random external library
+import random #imports the random external library
 from film import Film
 
 class Watchlist: #creates a new watchlist class, for managing the film objects

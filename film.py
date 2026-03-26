@@ -3,9 +3,9 @@
 class Cinema: #makes superclass
     def __init__(self,Title,Year):
         self.Title = Title
-        self.Year = Year
+        self.Year = Year #with these attributes
 
-
+#film subclass inherits from superclass of cinema
 class Film(Cinema): #creates a new subclass that films added in main project file go into here. later changed to inherit the cinema class
     def __init__(self, Title, Year, Genre):
         super().__init__(Title,Year) #inheriting these values from superclass
