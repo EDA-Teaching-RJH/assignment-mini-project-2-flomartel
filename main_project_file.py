@@ -51,8 +51,7 @@ while True: #sets up while loop
 
         film = Film(Title, Year, Genre)
         watchlist.add_film(film) # adds film to watchlist list
-
-        print("Film added to list!")
+        
 
     elif user_choice == "4": #option 4 mark film as watched
         watched_title = input("Please enter a previous film title to mark as watched: ") #promts user for film input

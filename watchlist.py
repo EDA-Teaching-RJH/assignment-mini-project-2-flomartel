@@ -40,6 +40,11 @@ class Watchlist: #creates a new watchlist class, for managing the film objects
 
 #for option 3 adding film to watchlist
     def add_film(self, film): #defines add film function
+        for existing in self.films:
+            if existing.Title.lower() == film.Title.lower():
+                print(f"{film.Title} is already in your watchlist!") #if the user adds a film already in watchlist dont add again
+                return
+        
         self.films.append(film) #.append adds an item to the end of a list
 
         with open("watchlist.csv", "a", newline="") as file: #appending new data on a new line using "a" and newline
@@ -51,7 +56,8 @@ class Watchlist: #creates a new watchlist class, for managing the film objects
                 film.watched,
                 film.rating
             ])
-        self.save_to_csv() ####
+        self.save_to_csv() ####saves film to csv file watchlist.csv
+        print(f"{film.Title} has been added to watchlist!") #if film not already in watchlist print this
 #for option 1 listing watchlist
     def list_films(self): #defines list films function
 

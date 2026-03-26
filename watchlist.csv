@@ -1,6 +1,6 @@
 Title,Year,Genre,Watched,Rating
 Nightcrawler,2014,Crime,True,4.7
-La La Land,2016,Romance,False,
+La La Land,2016,Romance,True,4.6
 Baby Driver,2019,Crime,True,4.9
 Gladiator,2000,Action,False,
 A Quiet Place,2019,Horror,False,
@@ -8,3 +8,5 @@ Pitch Perfect,2012,Comedy,True,4.9
 Twilight,2010,Romance,True,2.7
 Lost in Translation,2003,Romance,True,2.3
 About Time,2013,Romance,True,5.0
+Juno,2007,Comedy,False,
+Send Help,2026,Horror,True,3.5
